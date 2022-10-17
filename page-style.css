@@ -1,0 +1,400 @@
+/* Navbar */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Rockwell;
+    margin:0;
+}
+
+nav {
+    background-color: black;
+    height: 80px;
+    width: 100%;
+}
+
+nav img {
+    padding: 0 40px
+}
+
+.menu {
+    margin-right: 30px;
+    float: right;
+}
+
+.menu li {
+    display: inline-block;
+    position: relative;
+    line-height: 80px;
+    margin: 0 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.menu a:hover {
+    color: darkorange;
+}
+
+.menu a::before {
+    display:block;
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 0;
+    background-color: white;
+
+    transition: all ease-in-out 260ms;
+}
+
+.menu a:hover::before {
+    width: 100%;
+}
+
+.checkbutton {
+    display: none;
+    font-size: 30px;
+    line-height: 100px;
+    margin-right: 30px;
+    color: white;
+    float: right;
+    cursor: pointer;
+}
+
+#check {
+    display: none;
+}
+
+/* Home */
+.hometext {
+    top:0;
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hometext h2 {
+    font-size: 12vw;
+    color: black;
+    -webkit-text-stroke: 0.4vw white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hometext h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 100%;
+    -webkit-text-stroke: 0 darkorange;
+    overflow: hidden;
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%,90% {
+        width: 100%;
+    }
+}
+
+.hometext2 {
+    margin-top: 30px;
+    font-size: 3vw;
+}
+
+/* Eshop */
+.eshop-body {
+    background-image: url("images/sky2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.product-area {
+    padding-top: 5%;
+}
+
+.product-grid {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.product-grid:after, .product:before {
+    display: table;
+    content: "";
+}
+
+.product-grid li {
+    display: inline-block;
+    height: 20vw;
+    width: 20vw;
+    min-height: 350px;
+    min-width: 350px;
+    margin: 40px;
+}
+
+.product {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    -webkit-transition: 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out, -moz-transform 0.4s ease-in-out;
+    transition: 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.1);
+}
+
+.product-img-1 {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1));
+}
+
+.product-img-2 {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1));
+}
+
+.product-img-3 {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1));
+}
+
+.product-area a {
+    text-decoration: none;
+}
+.product-area h3 {
+    font-size: 5vw;
+    padding-top: 50%;
+    color: darkorange;
+}
+
+.product-area p {
+    font-size: 3vw;
+    color: white;
+    font-weight: bold;
+}
+
+/* Login */
+.login-body {
+    background-image: url("images/login.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.login-box {
+    position: relative;
+    background: black;
+    width: 380px;
+    height: 420px;
+    border-radius: 8px;
+    margin-left: 10%;
+    margin-right: 20%;
+    margin-top: 9vw;
+    overflow: hidden;
+}
+
+.login-box::before {
+    position: absolute;
+    content: '';
+    height: 420px;
+    width: 380px;
+    left: -50%;
+    top: -50%;
+    background: linear-gradient(0deg,transparent, darkorange, darkorange);
+    transform-origin:  bottom right;
+    animation: animate-login 6s linear infinite;
+}
+
+.login-box::after {
+    position: absolute;
+    content: '';
+    height: 420px;
+    width: 380px;
+    left: -50%;
+    top: -50%;
+    background: linear-gradient(0deg,transparent, darkorange, darkorange);
+    transform-origin:  bottom right;
+    animation: animate-login 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate-login {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form {
+    display: flex;
+    position: absolute;
+    background: black;
+    padding: 50px 35px;
+    inset: 10px;
+    border-radius: 8px;
+    z-index: 10;
+    flex-direction: column;
+}
+
+.form h2 {
+    text-align: center;
+    color: white;
+    font-weight: 650;
+    letter-spacing: 0.15em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.input-box {
+    position: relative;
+    margin-top: 35px;
+}
+
+.input-box input {
+    position: relative;
+    color: black;
+    width: 80%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    z-index: 10;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+}
+
+.input-box span {
+    position: absolute;
+    color: white;
+    left: 0;
+    padding: 20px 0 10px;
+    font-size: 1em;
+    pointer-events: none;
+    letter-spacing: 0.1em;
+    transition: 0.6s;
+}
+
+.input-box input:valid ~ span, .input-box input:focus ~ span {
+    color: darkorange;
+    transform: translateY(-28px);
+    font-size: 0.75em;
+}
+
+.input-box i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 91%;
+    height: 2px;
+    background: white;
+    border-radius: 5px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.input-box input:valid ~ i, .input-box input:focus ~ i {
+    height: 38px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a {
+    color: white;
+    margin: 10px 28px 0 0;
+    font-size: 0.7em;
+    text-decoration: none;
+}
+
+.links a:hover, .links a:nth-child(2) {
+    color: darkorange;
+}
+
+input[type="submit"] {
+    background: white;
+    padding: 11px 25px;
+    width: 100px;
+    margin-right: 30%;
+    margin-left: 30%;
+    letter-spacing: 0.05em;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-weight:700;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    /* Navbar */
+    .checkbutton {
+        display: flex;
+        padding-top: 28px;
+    }
+
+    .menu {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        right: 120%;
+        background: black;
+        z-index: 100;
+        transition: all 0.5s;
+    }
+
+    .menu li {
+        display: block;
+        margin: 50px 0;
+        line-height: 35px;
+    }
+
+    .menu a::before {
+        height: 0;
+    }
+
+    #check:checked ~ ul {
+        margin-right: 0;
+        right: 0;
+    }
+
+    /* Eshop */
+    .product-grid li {
+        min-height: 300px;
+        min-width: 300px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    /* Login */
+    .login-box {
+        align-items: center;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+    }
+}

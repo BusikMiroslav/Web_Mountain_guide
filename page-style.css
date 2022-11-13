@@ -77,18 +77,17 @@ nav img {
     margin: 0;
 
     position: relative;
-    text-align: center;
     color: white;
 }
 
 .hometext h2 {
-    font-size: 12vw;
+    font-size: 8vw;
     color: black;
-    -webkit-text-stroke: 0.4vw white;
+    -webkit-text-stroke: 0.2vw white;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-55%, -30%);
 }
 
 .hometext h2::before {
@@ -115,8 +114,47 @@ nav img {
 .hometext2 {
     margin-top: 30px;
     font-size: 3vw;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: monospace;
 }
 
+.videoframe {
+    margin: 5% 5% 10% 5%;
+}
+
+.homevideo {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56%;
+}
+
+.homevideo iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.footertext {
+    position: absolute;
+    color: darkorange;
+    padding-left: 4vw;
+    padding-top: 3px;
+}
+
+.footertext p {
+    display: inline-block;
+    flex-direction: column;
+    position: relative;
+    line-height: 40px;
+    margin: 0 6vw;
+}
+
+.footerstyle {
+    background: black;
+    height: 80px;
+}
 /* Eshop */
 .eshop-body {
     background-image: url("images/sky2.jpg");

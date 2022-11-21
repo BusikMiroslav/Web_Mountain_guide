@@ -6,25 +6,28 @@ use App\Core\Model;
 
 class Osoba extends Model
 {
-    protected $id_osoby;
-    protected $meno;
+    protected $id;
+    protected $meno = "";
     protected $priezvisko;
     protected $telefon;
+    protected $email;
+    protected $heslo;
+
 
     /**
      * @return mixed
      */
-    public function getIdOsoby()
+    public function getId()
     {
-        return $this->id_osoby;
+        return $this->id;
     }
 
     /**
      * @param mixed $id_osoby
      */
-    public function setIdOsoby($id_osoby): void
+    public function setId($id): void
     {
-        $this->id_osoby = $id_osoby;
+        $this->id = $id;
     }
 
     /**
@@ -75,6 +78,35 @@ class Osoba extends Model
         $this->telefon = $telefon;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
 
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email): void
+    {
+        $this->email = $email;
+    }
 
+    /**
+     * @return mixed
+     */
+    public function getHeslo()
+    {
+        return $this->heslo;
+    }
+
+    /**
+     * @param mixed $heslo
+     */
+    public function setHeslo($heslo): void
+    {
+        $this->heslo = $heslo;
+    }
 }

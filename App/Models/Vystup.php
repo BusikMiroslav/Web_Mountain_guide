@@ -10,6 +10,7 @@ class Vystup extends Model
     protected $nazov_vrcholu;
     protected $cena;
     protected $popis;
+    protected $obrazok;
 
     /**
      * @return mixed
@@ -73,5 +74,21 @@ class Vystup extends Model
     public function setPopis($popis): void
     {
         $this->popis = $popis;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getObrazok()
+    {
+        return $this->obrazok;
+    }
+
+    /**
+     * @param mixed $obrazok
+     */
+    public function setObrazok($obrazok): void
+    {
+        $this->obrazok = $obrazok;
     }
 }

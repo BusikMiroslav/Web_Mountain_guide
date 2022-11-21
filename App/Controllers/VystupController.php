@@ -30,7 +30,7 @@ class VystupController extends AControllerBase
 
         $vystup = ($id ? Vystup::getOne($id) : new Vystup());
         $vystup->setNazovVrcholu($this->request()->getValue('nazov_vrcholu'));
-        $vystup->setCena($this->request()->getValue('cena'));
+        $vystup->setCena(abs($this->request()->getValue('cena')));
         $vystup->setPopis($this->request()->getValue('popis'));
 
         $vystup->save();
@@ -41,6 +41,7 @@ class VystupController extends AControllerBase
     public function create() {
         return $this->html(new Vystup(), viewName: 'create.form');
     }
+
 
     public function edit() {
         $id = $this->request()->getValue('id');

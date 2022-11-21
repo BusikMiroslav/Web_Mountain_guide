@@ -1,35 +1,39 @@
 <?php $layout = 'auth' ?>
 <div class="registration-body">
     <div class="login-box">
-        <div class="form">
+        <form class="form" method="post" action="?c=auth&a=registration">
+
+            <label>
             <h2>Registrácia</h2>
             <div class="input-box">
-                <input type="text" name="meno" required="required">
+                <input type="text" id="meno" name="meno" maxlength="20" required>
                 <span>Meno</span>
                 <i></i>
             </div>
             <div class="input-box">
-                <input type="text" name="priezvisko" required="required">
+                <input type="text" id="priezvisko" name="priezvisko" maxlength="20" required>
                 <span>Priezvisko</span>
                 <i></i>
             </div>
             <div class="input-box">
-                <input type="text" name="telefon" required="required">
+                <input type="text" id="telefon" name="telefon" maxlength="13" pattern="^[+]?[()/0-9. -]{9,}$" required>
                 <span>Telefon</span>
                 <i></i>
             </div>
             <div class="input-box">
-                <input type="text" name="email" required="required">
+                <input type="email" id="email" name="email" maxlength="30" required>
                 <span>Email</span>
                 <i></i>
             </div>
             <div class="input-box">
-                <input type="password" name="heslo" required="required">
+                <input type="password" id="heslo" name="heslo" maxlength="20" required="required">
                 <span>Heslo</span>
                 <i></i>
             </div>
+            </label>
+            <div class="visibilityPassword" onclick="visibilityPassword()"><i class="fa-solid fa-eye-low-vision"></i></div>
             <input type="submit" value="Vytvoriť">
-        </div>
+        </form>
     </div>
 </div>
 

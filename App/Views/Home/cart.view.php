@@ -7,10 +7,10 @@
     <?php if (true) { ?>
 
         <div class="cart-body-admin">
-            <a href="?c=poistenie&a=poistenie">
+            <a href="?c=poistenie">
                 <img class="insurance" src="public/images/insurance.png" alt="Add insurance" style="height: 20vw; width: 20vw">
             </a>
-            <a href="?c=vodca&a=vodca">
+            <a href="?c=vodca">
                 <img class="leader" src="public/images/hiking_leader.png" alt="Add leader" style="height: 20vw; width: 20vw">
             </a>
 

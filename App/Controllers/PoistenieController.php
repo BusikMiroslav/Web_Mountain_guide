@@ -29,7 +29,7 @@ class PoistenieController extends AControllerBase
 
         $poistenie->save();
 
-        return $this->redirect("?c=poistenie&a=poistenie");
+        return $this->redirect("?c=poistenie");
     }
 
     public function delete() {

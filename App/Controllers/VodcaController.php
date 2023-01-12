@@ -24,7 +24,9 @@ class VodcaController extends AControllerBase
     }
 
     public function store() {
-        $vodca = new Vodca();
+        $id = $this->request()->getValue('id');
+
+        $vodca = ($id ? Vodca::getOne($id) : new Vodca());
         $vodca->setMeno($this->request()->getValue('meno'));
         $vodca->setPriezvisko($this->request()->getValue('priezvisko'));
         $vodca->setTelefon($this->request()->getValue('telefon'));
@@ -32,7 +34,7 @@ class VodcaController extends AControllerBase
 
         $vodca->save();
 
-        return $this->redirect("?c=vodca&a=vodca");
+        return $this->redirect("?c=vodca");
     }
 
     public function delete() {
@@ -42,6 +44,12 @@ class VodcaController extends AControllerBase
             $vodcaToDelete->delete();
         }
 
-        return $this->redirect("?c=vodca&a=vodca");
+        return $this->redirect("?c=vodca");
+    }
+
+    public function edit() {
+        $id = $this->request()->getValue('id');
+        $vodcaToEdit = Vodca::getOne($id);
+        return $this->html($vodcaToEdit, viewName: 'update');
     }
 }

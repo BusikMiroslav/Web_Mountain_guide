@@ -1,4 +1,3 @@
-<div class="container-fluid">
 <div class="insurance-body">
     <div class="insurance-box">
         <form class="form" method="post" action="?c=poistenie&a=store">
@@ -23,12 +22,11 @@
                         <div class="delete_poistenie">
                             <div class="text">
                                 <h2><?php echo $poistenie->getNazov()?></h2>
-                                <h3>X</h3>
                                 <a href="?c=poistenie&a=delete&id=<?php echo $poistenie->getId()?>">X</a>
                             </div>
                         </div>
                     </li>
                 <?php } ?>
         </ul>
-</div>
+    <h3></h3>
 </div>

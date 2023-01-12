@@ -300,6 +300,19 @@ nav img {
 }
 
 /* Insurance */
+.insurance-body {
+    background-image: url("../images/mountain_rescue.jpg");
+    margin-top: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    border: solid;
+}
+
+.insurance-body h3 {
+    margin-bottom: 300px;
+}
+
 .insurance-box {
     position: relative;
     background: black;
@@ -333,18 +346,30 @@ nav img {
 .delete_poistenie h2{
     color: whitesmoke;
     margin-left: 8px;
+    font-size: 22px;
 }
 .delete_poistenie a {
     color: red;
     margin: 3px 10px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* Vodca */
+.vodca_background {
+    background-image: url("../images/vodca.jpg");
+    margin-top: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    border: solid;
+}
+
 .vodca-box {
     position: relative;
     background: black;
     width: 340px;
-    height: 540px;
+    height: 530px;
     border-radius: 8px;
     margin-left: 3%;
     margin-right: 20%;
@@ -352,6 +377,71 @@ nav img {
     overflow: hidden;
 }
 
+.delete_vodca {
+    position: relative;
+    background: black;
+    width: 340px;
+    height: 190px;
+    border-radius: 8px;
+    margin-left: 3%;
+    margin-right: 20%;
+    margin-top: 2vw;
+    overflow: hidden;
+}
+
+.vodca-box-update {
+    position: relative;
+    background: black;
+    width: 340px;
+    height: 540px;
+    border-radius: 8px;
+    margin: 2vw 20% 100px 3%;
+    overflow: hidden;
+}
+
+.delete_vodca li {
+    marker: none;
+}
+
+.text_vodca {
+    display: block;
+    margin: 5px;
+}
+
+.delete_vodca h2{
+    color: whitesmoke;
+    margin-left: 30px;
+    margin-top: 20px;
+    font-size: 22px;
+}
+.delete_vodca a {
+    color: black;
+    margin: 3px 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.vodca_background h3 {
+    margin-bottom: 50px;
+}
+
+.delete_edit_vodca {
+    position: absolute;
+    background: white;
+    margin-left: 45px;
+    width: 240px;
+    height: 25px;
+    border-radius: 8px;
+    z-index: 100;
+}
+
+.delete_edit_vodca a {
+    margin-left: 35px;
+}
+
+.delete_edit_vodca a:hover {
+    color: darkorange;
+}
 /* Pridanie výstupu */
 .form_background {
     background-image: url("../images/vystup.png");

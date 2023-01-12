@@ -135,7 +135,9 @@ class Inflect
         'information',
         'equipment',
         'vystup',
-        'osoba'
+        'osoba',
+        'poistenie',
+        'vodca'
     );
 
     public static function pluralize($string)

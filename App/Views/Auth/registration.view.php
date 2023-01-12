@@ -2,7 +2,6 @@
 <div class="registration-body">
     <div class="login-box">
         <form class="form" method="post" action="?c=auth&a=registration">
-
             <label>
             <h2>Registrácia</h2>
             <div class="input-box">
@@ -31,8 +30,8 @@
                 <i></i>
             </div>
             </label>
-            <div class="visibilityPassword" onclick="visibilityPassword()"><i class="fa-solid fa-eye-low-vision"></i></div>
-            <input type="submit" value="Vytvoriť">
+            <div class="visibilityPassword" onclick="visibilityPassword()"><i class="fa-solid fa-eye-low-vision" id="oko"></i></div>
+            <input type="submit" id="vytvorit" value="Vytvoriť">
         </form>
     </div>
 </div>

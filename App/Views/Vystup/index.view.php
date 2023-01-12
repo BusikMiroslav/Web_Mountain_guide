@@ -20,10 +20,12 @@
                             <a href="#">
                                 <h3><?php echo $vystup->getNazovVrcholu() ?></h3>
                             </a>
+                            <img class="pozadie" src="public/images/<?php echo $vystup->getObrazok()?>" alt="Obrazok vrcholu">
                         </div>
                     </li>
                  <?php } ?>
             </ul>
+
         </div>
     <div>
 <div>

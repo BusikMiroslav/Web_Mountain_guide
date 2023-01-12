@@ -4,15 +4,13 @@ namespace App\Models;
 
 use App\Core\Model;
 
-class Osoba extends Model
+class Vodca extends Model
 {
     protected $id;
     protected $meno;
     protected $priezvisko;
     protected $telefon;
-    protected $email;
-    protected $heslo;
-
+    protected $vek;
 
     /**
      * @return mixed
@@ -73,33 +71,16 @@ class Osoba extends Model
     /**
      * @return mixed
      */
-    public function getEmail()
+    public function getVek()
     {
-        return $this->email;
+        return $this->vek;
     }
 
     /**
-     * @param mixed $email
+     * @param mixed $vek
      */
-    public function setEmail($email): void
+    public function setVek($vek): void
     {
-        $this->email = $email;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHeslo()
-    {
-        return base64_decode($this->heslo);
-    }
-
-    /**
-     * Base 64
-     * @param mixed $heslo
-     */
-    public function setHeslo($heslo): void
-    {
-        $this->heslo = base64_encode($heslo);
+        $this->vek = $vek;
     }
 }

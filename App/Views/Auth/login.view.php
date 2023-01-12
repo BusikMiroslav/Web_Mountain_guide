@@ -3,15 +3,16 @@ $layout = 'auth';
 /** @var Array $data */
 ?>
 <div class="login-box">
-    <div class="form">
+    <form class="form" method="post" action="?c=auth&a=login">
+        <label>
         <h2>PRIHLÁSENIE</h2>
         <div class="input-box">
-            <input type="text" name="email" required="required">
+            <input type="text" name="email" id="email" required="required">
             <span>Email</span>
             <i></i>
         </div>
         <div class="input-box">
-            <input type="password" name="password" required="required">
+            <input type="password" name="password" id="password" required="required">
             <span>Heslo</span>
             <i></i>
         </div>
@@ -19,6 +20,7 @@ $layout = 'auth';
             <a href="?c=auth&a=forgpassw">Zabudnuté heslo</a>
             <a href="?c=auth&a=regist">Registrácia</a>
         </div>
-        <input type="submit" value="Login">
-    </div>
+        <input type="submit" name="submit" value="Login">
+        </label>
+    </form>
 </div>

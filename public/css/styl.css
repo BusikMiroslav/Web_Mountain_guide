@@ -188,6 +188,7 @@ nav img {
     width: 200px;
     height: 25px;
     border-radius: 8px;
+    z-index: 100;
 }
 
 .delete_edit a {
@@ -202,12 +203,13 @@ nav img {
 
 .product-area {
     padding-top: 2%;
-    padding-bottom: 10%;
+    padding-bottom: 18%;
 }
 
 .product-grid {
     display: block;
     width: 100%;
+    height: 100%;
     text-align: center;
 }
 
@@ -224,7 +226,7 @@ nav img {
     min-width: 350px;
     margin: 40px;
 }
-
+/*
 .product {
     width: 100%;
     height: 100%;
@@ -235,15 +237,29 @@ nav img {
     -moz-transition: 0.4s ease-in-out, -moz-transform 0.4s ease-in-out;
     transition: 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
+*/
+.product-area .product .pozadie {
+    display: inline-block;
+    border-radius: 10px;
+    position: initial;
+    height: 20vw;
+    width: 20vw;
+    min-height: 350px;
+    min-width: 350px;
+    cursor: pointer;
+}
 
 .product:hover {
     transform: scale(1.1);
+    transition: 0.8s;
 }
 
+/*
 .product-img {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1));
 }
-/*
+
+
 .product-img-2 {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1));
 }
@@ -257,8 +273,11 @@ nav img {
 }
 .product-area h3 {
     font-size: 4.2vw;
-    padding-top: 50%;
-    color: darkorange;
+    padding-top: 160px;
+    max-width: 330px;
+    color: whitesmoke;
+    position: absolute;
+    padding-left: 20px;
 }
 
 .product-area p {
@@ -269,8 +288,68 @@ nav img {
 
 /* Cart */
 .cart-body  {
-    margin: 40%;
-    margin-top: 15%;
+    margin: 15% 40% 0% 40%;
+}
+
+.cart-body-admin {
+    margin: 15% 20% 0% 26%;
+}
+
+.leader {
+    padding-left: 10%;
+}
+
+/* Insurance */
+.insurance-box {
+    position: relative;
+    background: black;
+    width: 360px;
+    height: 280px;
+    border-radius: 8px;
+    margin-left: 3%;
+    margin-right: 20%;
+    margin-top: 2vw;
+    overflow: hidden;
+}
+
+.delete_poistenie {
+    position: relative;
+    background: black;
+    width: 360px;
+    height: 40px;
+    border-radius: 8px;
+    margin-left: 3%;
+    margin-right: 20%;
+    margin-top: 2vw;
+    overflow: hidden;
+}
+
+.text {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.delete_poistenie h2{
+    color: whitesmoke;
+    margin-left: 8px;
+}
+.delete_poistenie a {
+    color: red;
+    margin: 3px 10px;
+}
+
+/* Vodca */
+.vodca-box {
+    position: relative;
+    background: black;
+    width: 340px;
+    height: 540px;
+    border-radius: 8px;
+    margin-left: 3%;
+    margin-right: 20%;
+    margin-top: 2vw;
+    overflow: hidden;
 }
 
 /* Pridanie výstupu */
@@ -285,11 +364,11 @@ nav img {
     position: absolute;
     background: black;
     width: 340px;
-    height: 390px;
+    height: 430px;
     border-radius: 8px;
     margin-left: 5%;
     margin-right: 20%;
-    margin-top: 9vw;
+    margin-top: 7vw;
     overflow: hidden;
 }
 
@@ -392,7 +471,7 @@ nav img {
     position: relative;
     background: black;
     width: 380px;
-    height: 290px;
+    height: 360px;
     border-radius: 8px;
     margin: 10% 20% 1vw 10%;
     overflow: hidden;

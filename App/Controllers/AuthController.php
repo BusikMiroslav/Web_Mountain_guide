@@ -30,16 +30,18 @@ class AuthController extends AControllerBase
     public function login(): Response
     {
         $formData = $this->app->getRequest()->getPost();
-        $logged = null;
-        if (isset($formData['submit'])) {
-            $logged = $this->app->getAuth()->login($formData['login'], $formData['password']);
-            if ($logged) {
-                return $this->redirect('?c=admin');
+
+        if(isset($formData['submit'])) {
+            $osoba = Osoba::getOneByEmail($this->request()->getValue('email'));
+            if(Osoba::getOneByEmail($this->request()->getValue('email')) != null) {
+                if($this->request()->getValue('password') == $osoba->getHeslo()) {
+                    return $this->redirect("?c=home&a=cart");
+                } else {
+                    echo '<script>alert("Zlé prihlasovacie údaje!")</script>';
+                }
             }
         }
-
-        $data = ($logged === false ? ['message' => 'Zlý login alebo heslo!'] : []);
-        return $this->html($data);
+        return $this->html();
     }
 
     /**
@@ -83,6 +85,18 @@ class AuthController extends AControllerBase
      */
     public function forgpassw() : Response
     {
+        $formData = $this->app->getRequest()->getPost();
+        $osoba = Osoba::getOneByEmail($this->request()->getValue('email'));
+        if(isset($formData['submit'])) {
+            if(Osoba::getOneByEmail($this->request()->getValue('email')) != null) {
+                $osoba->setHeslo($this->request()->getValue('heslo'));
+                $osoba->save();
+                return $this->redirect("?c=auth&a=login");
+            } else {
+                echo '<script>alert("Email neexistuje!")</script>';
+            }
+        }
+
         return $this->html();
     }
 }

@@ -35,6 +35,7 @@ class AuthController extends AControllerBase
             $osoba = Osoba::getOneByEmail($this->request()->getValue('email'));
             if(Osoba::getOneByEmail($this->request()->getValue('email')) != null) {
                 if($this->request()->getValue('password') == $osoba->getHeslo()) {
+                    $this->app->getAuth()->login($osoba->getEmail(), $osoba->getHeslo());
                     return $this->redirect("?c=home&a=cart");
                 } else {
                     echo '<script>alert("Zlé prihlasovacie údaje!")</script>';
@@ -51,7 +52,7 @@ class AuthController extends AControllerBase
     public function logout(): Response
     {
         $this->app->getAuth()->logout();
-        return $this->html();
+        return $this->redirect("?c=auth&a=login");
     }
 
     public function regist() {

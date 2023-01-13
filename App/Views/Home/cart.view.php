@@ -4,8 +4,14 @@
 
 <div class="container-fluid">
 
-    <?php if (true) { ?>
+    <?php if(!$auth->isLogged())  { ?>
+        <div class="cart-body">
+            <a href="?c=auth&a=login">
+                <img class="loginfirst" src="public/images/login.png" alt="Login first" style="height: 20vw; width: 20vw">
+            </a>
+        </div>
 
+    <?php } else if ($auth->getLoggedUserName() === "admin@gmail.com") { ?>
         <div class="cart-body-admin">
             <a href="?c=poistenie">
                 <img class="insurance" src="public/images/insurance.png" alt="Add insurance" style="height: 20vw; width: 20vw">
@@ -16,14 +22,10 @@
 
         </div>
 
-    <?php } else if(2 == 1) { ?>
-        $auth->isLogged()
-        //sem pôjde zobrazenie výstupov   ToDo
-
     <?php } else { ?>
         <div class="cart-body">
             <a href="?c=auth&a=login">
-                <img class="loginfirst" src="public/images/login.png" alt="Login first" style="height: 20vw; width: 20vw">
+                <img class="loginfirst" src="public/images/hiking_leader.png" alt="Login first" style="height: 20vw; width: 20vw">
             </a>
         </div>
 

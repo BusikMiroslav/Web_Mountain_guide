@@ -27,7 +27,11 @@
         <ul class="menu">
             <li><a href="?c=home">Home</a></li>
             <li><a href='?c=vystup&a=index'>E-shop</a></li>
-            <li><a href="?c=auth&a=login">Login</a></li>
+            <?php if($auth->isLogged()) { ?>
+                <li><a href="?c=auth&a=logout">Logout</a></li>
+            <?php } else { ?>
+                <li><a href="?c=auth&a=login">Login</a></li>
+            <?php } ?>
             <li><a href="?c=home&a=cart">My <i class="fa fa-person-hiking"></i></a></li>
         </ul>
     </nav>
@@ -38,5 +42,6 @@
         <?= $contentHTML ?>
     </div>
 </div>
+
 </body>
 </html>

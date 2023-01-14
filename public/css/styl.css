@@ -724,3 +724,60 @@ input[type="submit"] {
     color: white;
     cursor: pointer;
 }
+
+
+
+
+/* Info vystup */
+.pozadie_vystup {
+    display: inline-block;
+    position: initial;
+    height: 20vw;
+    width: 20vw;
+    min-height: 350px;
+    min-width: 350px;
+    padding: 80px 0px 0px 20px;
+}
+
+.section-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+
+.info_vystup {
+    padding: 120px 60px;
+}
+
+.info_vystup h1 {
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+.info_vystup p {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: justify;
+    max-width: 450px;
+}
+
+.info_vystup input {
+    position: relative;
+    color: whitesmoke;
+    width: 120px;
+    padding: 10px 10px 10px;
+    background: black;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+}
+
+.info_vystup input:hover {
+    color: darkorange;
+}
+
+.info_vystup select {
+    width: 220px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}

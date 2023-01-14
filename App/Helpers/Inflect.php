@@ -137,7 +137,8 @@ class Inflect
         'vystup',
         'osoba',
         'poistenie',
-        'vodca'
+        'vodca',
+        'rezervacia'
     );
 
     public static function pluralize($string)

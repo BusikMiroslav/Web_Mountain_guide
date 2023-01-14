@@ -24,7 +24,7 @@
                                     <a href="?c=vystup&a=edit&id=<?php echo $vystup->getId() ?>">Upraviť</a>
                                 </div>
                             <?php } ?>
-                            <a href="#">
+                            <a href="?c=rezervacia&a=show&id=<?php echo $vystup->getId() ?>">
                                 <h3><?php echo $vystup->getNazovVrcholu() ?></h3>
                             </a>
                             <img class="pozadie" src="public/images/<?php echo $vystup->getObrazok()?>" alt="Obrazok vrcholu">

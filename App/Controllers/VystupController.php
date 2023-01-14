@@ -32,15 +32,21 @@ class VystupController extends AControllerBase
         $vystup->setNazovVrcholu($this->request()->getValue('nazov_vrcholu'));
         $vystup->setCena(abs($this->request()->getValue('cena')));
         $vystup->setPopis($this->request()->getValue('popis'));
+
+
         if(isset($_FILES['img']) && $_FILES['img']['error'] == UPLOAD_ERR_OK) {
             $imgName = time() . "_" . $_FILES["img"]["name"];
-            $imgPath = "C:\\xampp\\htdocs\\VAII_sem_praca\\public\\images" . DIRECTORY_SEPARATOR . $imgName;
-            if (move_uploaded_file($_FILES["img"]["tmp_name"], $imgPath)) {
-                $vystup->setObrazok($imgName);
+            $file_type = pathinfo($imgName, PATHINFO_EXTENSION);
+            $allow_type = array('jpg', 'png', 'jpeg', 'gif');
+            if(in_array($file_type, $allow_type)) {
+                $imgPath = "C:\\xampp\\htdocs\\VAII_sem_praca\\public\\images" . DIRECTORY_SEPARATOR . $imgName;
+                if (move_uploaded_file($_FILES["img"]["tmp_name"], $imgPath)) {
+                    $vystup->setObrazok($imgName);
+                }
+
+                $vystup->save();
             }
         }
-
-        $vystup->save();
 
         return $this->redirect("?c=vystup");
     }
@@ -54,5 +60,10 @@ class VystupController extends AControllerBase
         $id = $this->request()->getValue('id');
         $vystupToEdit = Vystup::getOne($id);
         return $this->html($vystupToEdit, viewName: 'create.form');
+    }
+
+    public function info(): Response
+    {
+        return $this->html();
     }
 }

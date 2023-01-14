@@ -33,8 +33,8 @@ class PoistenieController extends AControllerBase
     }
 
     public function delete() {
-        $id = $this->request()->getValue('id');
-        $poistenieToDelete = Poistenie::getOne($id);
+        $id_poistenia = $this->request()->getValue('id');
+        $poistenieToDelete = Poistenie::getOne($id_poistenia);
         if ($poistenieToDelete) {
             $poistenieToDelete->delete();
         }

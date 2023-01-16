@@ -781,3 +781,90 @@ input[type="submit"] {
     font-size: 16px;
     margin-bottom: 20px;
 }
+
+
+/* Môj profil */
+.user_info {
+    margin: 50px 20% 0 15%;
+}
+
+.user_info p {
+   margin-top: 15px;
+}
+
+
+.user_info a {
+    position: absolute;
+    color: whitesmoke;
+    padding: 10px 10px 10px;
+    background: black;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    margin: 25px 0 0 50px;
+    border-radius: 10px;
+}
+
+.user_info a:hover {
+    color: darkorange;
+}
+
+.profile {
+    background-image: url("../images/profile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 400px;
+    padding-top: 80px;
+}
+
+.user_rezervacia {
+    position: relative;
+    background: black;
+    width: 340px;
+    height: 190px;
+    border-radius: 8px;
+    margin-left: 3%;
+    margin-right: 20%;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.text_rezervacie {
+    display: block;
+    margin: 5px;
+}
+
+.user_rezervacia h2{
+    color: whitesmoke;
+    margin-left: 30px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.user_rezervacia strong{
+    color: darkorange;
+}
+
+.stlpce {
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    max-width: 1200px;
+}
+
+.stlpec {
+    height: 18rem;
+    padding: 1rem;
+    margin-top: 50px;
+}
+
+.rezerv h1 {
+    margin-left: 74px;
+}
+
+@media (min-width: 750px) {
+    .stlpce {
+        grid-template-columns: repeat(2,1fr);
+    }
+}

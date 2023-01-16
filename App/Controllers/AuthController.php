@@ -59,23 +59,38 @@ class AuthController extends AControllerBase
         return $this->html(new Osoba(), viewName: 'registration');
     }
 
+    public function update() {
+        $id = $this->request()->getValue('id');
+        $osobaEdit = Osoba::getOne($id);
+        return $this->html($osobaEdit, viewName: 'update.profile');
+    }
 
     public function registration(): Response
     {
-        //$id = $this->request()->getValue('id');
+        $id = $this->request()->getValue('id');
         if(Osoba::getOneByEmail($this->request()->getValue('email')) != null) {
-            echo '<script>alert("Email už existuje!")</script>';
-            return $this->html(viewName: 'registration');
+            if(!$id || (Osoba::getOne($id)->getEmail() != Osoba::getOneByEmail($this->request()->getValue('email'))->getEmail() && Osoba::getOneByEmail($this->request()->getValue('email')) != null)) {
+                echo '<script>alert("Email už existuje!")</script>';
+                if ($id) {
+                    return $this->redirect("?c=home&a=cart");
+                } else {
+                    return $this->html(viewName: 'registration');
+                }
+            }
+        }
+
+        $osoba = ($id ? Osoba::getOne($id) : new Osoba());
+        $osoba->setMeno($this->request()->getValue('meno'));
+        $osoba->setPriezvisko($this->request()->getValue('priezvisko'));
+        $osoba->setTelefon($this->request()->getValue('telefon'));
+        $osoba->setEmail($this->request()->getValue('email'));
+        $osoba->setHeslo($this->request()->getValue('heslo'));
+
+        $osoba->save();
+
+        if ($id) {
+            return $this->redirect("?c=home&a=cart");
         } else {
-            $osoba = new Osoba();
-            $osoba->setMeno($this->request()->getValue('meno'));
-            $osoba->setPriezvisko($this->request()->getValue('priezvisko'));
-            $osoba->setTelefon($this->request()->getValue('telefon'));
-            $osoba->setEmail($this->request()->getValue('email'));
-            $osoba->setHeslo($this->request()->getValue('heslo'));
-
-            $osoba->save();
-
             return $this->redirect("?c=auth&a=login");
         }
     }

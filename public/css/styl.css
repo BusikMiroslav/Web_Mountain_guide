@@ -249,7 +249,7 @@ nav img {
 }
 
 .product-area h3 {
-    font-size: 4.2vw;
+    font-size: calc(40px + 1vw);
     padding-top: 160px;
     max-width: 330px;
     color: whitesmoke;
@@ -650,6 +650,7 @@ input[type="submit"] {
         min-height: 300px;
         min-width: 300px;
         margin-bottom: 10px;
+        margin-left: 0;
     }
 }
 
@@ -767,7 +768,7 @@ input[type="submit"] {
     width: 340px;
     height: 210px;
     border-radius: 8px;
-    margin-left: 3%;
+    margin-left: 2%;
     margin-right: 20%;
     margin-top: 20px;
     overflow: hidden;
@@ -852,7 +853,7 @@ input[type="submit"] {
 .trasa-box {
     position: relative;
     background: black;
-    width: 360px;
+    width: 350px;
     height: 340px;
     border-radius: 8px;
     margin-left: 3%;
@@ -864,7 +865,7 @@ input[type="submit"] {
 .delete_trasa {
     position: relative;
     background: black;
-    width: 360px;
+    width: 350px;
     height: 80px;
     border-radius: 8px;
     margin-left: 3%;

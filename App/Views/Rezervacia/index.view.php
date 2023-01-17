@@ -47,8 +47,9 @@
                         <option value="<?php echo $vodca->getId() ?>"><?php echo $vodca->getMeno() ?> <?php echo $vodca->getPriezvisko() ?></option>
                     <?php } ?>
                 </select><br>
-
-                <input type="submit" name="submit" value="Objednať">
+                <?php if ($auth->isLogged() && $auth->getLoggedUserName() != "admin@gmail.com")  { ?>
+                    <input type="submit" name="submit" value="Objednať">
+                <?php } ?>
             </form>
         <?php } ?>
     </div>

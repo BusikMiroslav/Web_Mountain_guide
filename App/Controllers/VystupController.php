@@ -46,10 +46,10 @@ class VystupController extends AControllerBase
                 if (move_uploaded_file($_FILES["img"]["tmp_name"], $imgPath)) {
                     $vystup->setObrazok($imgName);
                 }
-
-                $vystup->save();
             }
         }
+
+        $vystup->save();
 
         return $this->redirect("?c=vystup");
     }

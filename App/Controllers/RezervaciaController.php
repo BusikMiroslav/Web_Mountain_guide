@@ -80,7 +80,7 @@ class RezervaciaController extends AControllerBase
             $rezervaciaToDelete->delete();
         }
 
-        return $this->redirect("?c=home");
+        return $this->redirect("?c=home&a=cart");
 
     }
 }

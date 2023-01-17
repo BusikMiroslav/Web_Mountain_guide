@@ -19,7 +19,6 @@
             <a href="?c=vodca">
                 <img class="leader" src="public/images/hiking_leader.png" alt="Add leader" style="height: 20vw; width: 20vw">
             </a>
-
         </div>
 
     <?php } else { ?>
@@ -60,7 +59,5 @@
                 </div>
             </div>
         </div>
-
     <?php } ?>
-
     <div>

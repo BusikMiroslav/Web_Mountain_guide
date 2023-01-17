@@ -24,10 +24,6 @@ class TrasaController extends AControllerBase
 
     public function store() {
         $id = $this->request()->getValue('id');
-        if(Trasa::getOneByNazov($this->request()->getValue('nazov')) != null) {
-            echo '<script>alert("Daná trasa už existuje!")</script>';
-            return $this->redirect("?c=vystup");
-        }
 
         $trasa = new Trasa();
         $trasa->setNazov($this->request()->getValue('nazov'));
@@ -47,5 +43,22 @@ class TrasaController extends AControllerBase
         }
 
         return $this->redirect("?c=vystup");
+    }
+
+    /**
+     * Check if nazov trasy is already used
+     * @return Response
+     * @throws \Exception
+     */
+    public function trasaExists() : Response {
+        $nazov = $_REQUEST["tr"];
+        $exists = Trasa::getOneByNazov($nazov);
+        $output = false;
+
+        if($exists) {
+            $output = true;
+        }
+
+        return $this->json($output);
     }
 }

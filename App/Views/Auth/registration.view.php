@@ -20,8 +20,8 @@
                 <i></i>
             </div>
             <div class="input-box">
-                <input type="email" id="email" name="email" maxlength="30" pattern="[^' ']+" required>
-                <span>Email</span>
+                <input type="email" id="email" name="email" onkeyup="emailUsedCheck(this.value)" maxlength="30" pattern="[^' ']+" required>
+                <span id="mail">Email</span>
                 <i></i>
             </div>
             <div class="input-box">
@@ -31,7 +31,7 @@
             </div>
             </label>
             <div class="visibilityPassword" onclick="visibilityPassword()"><i class="fa-solid fa-eye-low-vision" id="oko"></i></div>
-            <input type="submit" id="vytvorit" value="Vytvoriť">
+            <input type="submit" id="ulozit" value="Vytvoriť">
         </form>
     </div>
 </div>

@@ -9,7 +9,7 @@
                     <i></i>
                 </div>
             </label>
-            <input onclick="ulozPoistenie()" type="submit" value="Pridať">
+            <input onclick="ulozPoistenie()" type="submit" id="ulozit" value="Pridať">
         </form>
     </div> <br><br>
         <ul>

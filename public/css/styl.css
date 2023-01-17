@@ -80,6 +80,7 @@ nav img {
     color: white;
 }
 
+/* zdroj pohyblivého textu YT: https://www.youtube.com/watch?v=ccO2B40zkv4 */
 .hometext h2 {
     font-size: 8vw;
     color: black;
@@ -203,7 +204,7 @@ nav img {
 
 .product-area {
     padding-top: 2%;
-    padding-bottom: 18%;
+    padding-bottom: 700px;
 }
 
 .product-grid {
@@ -502,11 +503,12 @@ nav img {
     position: relative;
     background: black;
     width: 380px;
-    height: 360px;
+    height: 430px;
     border-radius: 8px;
-    margin: 10% 20% 1vw 10%;
+    margin: 5% 20% 1vw 10%;
     overflow: hidden;
 }
+
 
 .form {
     display: flex;
@@ -881,4 +883,14 @@ input[type="submit"] {
     margin: 3px 10px;
     text-decoration: none;
     font-weight: bold;
+}
+
+
+
+
+
+.allert {
+    color: red;
+    position: absolute;
+    margin: 15px 0 0 15px;
 }

@@ -7,7 +7,7 @@
             <label>
                 <h2 id="info">Pridanie trasy</h2>
                 <div class="input-box">
-                    <input type="text" id="nazov" name="nazov" maxlength="20" pattern="[^' ']+" required>
+                    <input type="text" id="nazov" name="nazov" onkeyup="trasaUsedCheck(this.value)" maxlength="20" pattern="[^' ']+" required>
                     <span id="ins">Názov</span>
                     <i></i>
                 </div>
@@ -17,7 +17,7 @@
                     <i></i>
                 </div>
             </label>
-            <input type="submit" value="Pridať">
+            <input type="submit" id="ulozit" value="Pridať">
         </form>
     </div> <br><br>
     <ul>

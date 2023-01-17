@@ -16,7 +16,9 @@
                     <input id="cena" type="number" name="cena" value="<?php echo $data->getCena() ?>" min="0" max="2000" required><br><br>
                     <p id="txtpopis">Zadaj popis</p>
                     <textarea id="popis" cols="32" rows="6" type="text" name="popis"><?php echo $data->getPopis() ?></textarea><br><br>
-                    <input type="file" name="img" value="<?php echo $data->getObrazok() ?>" id="img" required><br><br>
+                    <?php if ($data->getObrazok() == null) { ?>
+                        <input type="file" name="img" id="img" required><br><br>
+                    <?php } ?>
                 </label>
                 <input type="submit" value="Odoslať">
             </div>

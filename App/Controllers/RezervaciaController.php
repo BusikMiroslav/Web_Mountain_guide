@@ -69,7 +69,6 @@ class RezervaciaController extends AControllerBase
 
             return $this->redirect("?c=vystup");
         } else {
-            echo '<script>alert("Tento výstup máš už objednaný!")</script>';
             return $this->redirect("?c=vystup");
         }
     }

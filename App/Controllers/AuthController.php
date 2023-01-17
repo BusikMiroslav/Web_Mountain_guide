@@ -38,7 +38,8 @@ class AuthController extends AControllerBase
                     $this->app->getAuth()->login($osoba->getEmail(), $osoba->getHeslo());
                     return $this->redirect("?c=home&a=cart");
                 } else {
-                    echo '<script>alert("Zlé prihlasovacie údaje!")</script>';
+                    $data = ['message' => 'Nesprávne prihlasovacie údaje!'];
+                    return $this->html($data);
                 }
             }
         }
@@ -70,12 +71,7 @@ class AuthController extends AControllerBase
         $id = $this->request()->getValue('id');
         if(Osoba::getOneByEmail($this->request()->getValue('email')) != null) {
             if(!$id || (Osoba::getOne($id)->getEmail() != Osoba::getOneByEmail($this->request()->getValue('email'))->getEmail() && Osoba::getOneByEmail($this->request()->getValue('email')) != null)) {
-                echo '<script>alert("Email už existuje!")</script>';
-                if ($id) {
-                    return $this->redirect("?c=home&a=cart");
-                } else {
-                    return $this->html(viewName: 'registration');
-                }
+                return $this->redirect("?c=home&a=cart");
             }
         }
 
@@ -108,11 +104,46 @@ class AuthController extends AControllerBase
                 $osoba->setHeslo($this->request()->getValue('heslo'));
                 $osoba->save();
                 return $this->redirect("?c=auth&a=login");
-            } else {
-                echo '<script>alert("Email neexistuje!")</script>';
             }
         }
 
         return $this->html();
+    }
+
+    /**
+     * Check same password
+     * @return Response
+     * @throws \Exception
+     */
+    public function samePassword() : Response {
+        $heslo = $_REQUEST["pass"];
+        $id = explode("/", $heslo);
+        $prve = $id[0];
+        $druhe = $id[1];
+        $output = false;
+
+        if($prve === $druhe) {
+            $output = true;
+        }
+
+        return $this->json($output);
+    }
+
+    /**
+     * Check if email is already used
+     * @return Response
+     * @throws \Exception
+     */
+    public function emailExists() : Response {
+        $email = $_REQUEST["mail"];
+
+        $exists = Osoba::getOneByEmail($email);
+        $output = false;
+
+        if($exists) {
+            $output = true;
+        }
+
+        return $this->json($output);
     }
 }

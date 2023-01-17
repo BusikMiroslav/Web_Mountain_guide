@@ -25,13 +25,6 @@ class PoistenieController extends AControllerBase
 
     public function store() : Response {
         $nazov = $_REQUEST["nazov"];
-        $id = $this->request()->getValue('id');
-        if(Poistenie::getOneByNazov($nazov) != null) {
-            if(!$id || (Poistenie::getOne($id)->getNazov() != Poistenie::getOneByNazov($nazov)->getNazov() && Poistenie::getOneByNazov($nazov) != null)) {
-                echo '<script>alert("Dané poistenie už existuje!")</script>';
-                return $this->redirect("?c=poistenie");
-            }
-        }
 
         $poistenie = new Poistenie();
         $poistenie->setNazov($nazov);

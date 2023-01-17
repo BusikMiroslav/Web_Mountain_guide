@@ -28,7 +28,6 @@ class VodcaController extends AControllerBase
         $id = $this->request()->getValue('id');
         if(Vodca::getOneByTelefon($this->request()->getValue('telefon')) != null) {
             if(!$id || (Vodca::getOne($id)->getTelefon() != Vodca::getOneByTelefon($this->request()->getValue('telefon'))->getTelefon() && Vodca::getOneByTelefon($this->request()->getValue('telefon')) != null)) {
-                echo '<script>alert("Dané číslo už existuje!")</script>';
                 return $this->redirect("?c=vodca");
             }
         }

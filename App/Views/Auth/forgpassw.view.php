@@ -5,8 +5,8 @@
             <label>
                 <h2>Zabudnuté heslo</h2>
                 <div class="input-box">
-                    <input id="email" type="email" name="email" maxlength="30" pattern="[^' ']+" required="required">
-                    <span>Email</span>
+                    <input id="email" type="email" name="email" maxlength="30" onkeyup="emailExists(this.value)" pattern="[^' ']+" required="required">
+                    <span id="mail">Email</span>
                     <i></i>
                 </div>
                 <div class="input-box">
@@ -14,7 +14,12 @@
                     <span>Nové heslo</span>
                     <i></i>
                 </div>
-            <input type="submit" id="odoslat" name="submit" value="Odoslať">
+                <div class="input-box">
+                    <input id="hesloopak" type="password" name="hesloopak" onkeyup="rovnakeHeslaCheck(this.value)" onmousemove="changePasswordButton()" maxlength="20" pattern="[^' ']+" required="required">
+                    <span id="infosame">Zopakuj heslo</span>
+                    <i></i>
+                </div>
+            <input type="submit" id="odoslat" name="submit" value="Odoslať" >
             </label>
         </form>
     </div>

@@ -25,7 +25,7 @@
                     <i></i>
                 </div>
             </label>
-            <input type="submit" value="Uložiť">
+            <input type="submit" id="uloz" value="Uložiť">
         </form>
     </div> <br><br>
 

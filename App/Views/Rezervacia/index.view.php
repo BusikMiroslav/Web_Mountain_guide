@@ -13,6 +13,13 @@
         <h1><?php echo $data->getNazovVrcholu() ?></h1>
         <p><strong>Cena: &ensp;</strong>  <?php echo $data->getCena() ?> €</p>
         <p><strong>Popis: &ensp;</strong>  <?php echo $data->getPopis() ?></p>
+        <p><strong>Možnosti inej trasy ako klasickej:</strong></p>
+        <?php $trasy = \App\Models\Trasa::getAll();
+            foreach ($trasy as $trasa) {
+                if ($trasa->getIdVystup() == $data->getId()) {?>
+                <p> ➸ &ensp;<?php echo $trasa->getNazov() ?> &emsp;&emsp;<?php echo $trasa->getTypTrasy() ?> </p>
+            <?php }
+            } ?>
         <br>
         <?php if($auth->isLogged()) { ?>
             <form action="?c=rezervacia&a=store" method="post">

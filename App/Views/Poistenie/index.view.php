@@ -22,7 +22,9 @@
                         <div class="delete_poistenie">
                             <div class="text">
                                 <h2><?php echo $poistenie->getNazov()?></h2>
-                                <a href="?c=poistenie&a=delete&id=<?php echo $poistenie->getId()?>">X</a>
+                                <?php if ($poistenie->getNazov() != "Základné") { ?>
+                                    <a href="?c=poistenie&a=delete&id=<?php echo $poistenie->getId()?>">X</a>
+                                <?php } ?>
                             </div>
                         </div>
                     </li>

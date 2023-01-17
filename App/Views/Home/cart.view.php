@@ -50,6 +50,9 @@
                                         <h2><strong>Vodca: &ensp;&ensp;&emsp;</strong> ?</h2>
                                         <h2><strong>Telefon: &ensp;&ensp;</strong> 0905428170</h2><br>
                                     <?php } ?>
+                                    <div class="delete_rezervacia">
+                                        <a href="?c=rezervacia&a=delete&id=<?php echo $rez->getId() ?>">Zrušiť</a>
+                                    </div>
                                 </div>
                             </div>
                         <?php }

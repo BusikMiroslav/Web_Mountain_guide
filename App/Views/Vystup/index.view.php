@@ -22,6 +22,7 @@
                                 <div class="delete_edit">
                                     <a href="?c=vystup&a=delete&id=<?php echo $vystup->getId() ?>">Zmazať</a>
                                     <a href="?c=vystup&a=edit&id=<?php echo $vystup->getId() ?>">Upraviť</a>
+                                    <a href="?c=trasa&a=create&id=<?php echo $vystup->getId() ?>">Trasa</a>
                                 </div>
                             <?php } ?>
                             <a href="?c=rezervacia&a=show&id=<?php echo $vystup->getId() ?>">

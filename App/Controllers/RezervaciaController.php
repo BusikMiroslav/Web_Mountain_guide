@@ -73,4 +73,15 @@ class RezervaciaController extends AControllerBase
             return $this->redirect("?c=vystup");
         }
     }
+
+    public function delete() {
+        $id = $this->request()->getValue('id');
+        $rezervaciaToDelete = Rezervacia::getOne($id);
+        if ($rezervaciaToDelete) {
+            $rezervaciaToDelete->delete();
+        }
+
+        return $this->redirect("?c=home");
+
+    }
 }

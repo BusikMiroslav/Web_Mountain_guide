@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\AControllerBase;
 use App\Core\Responses\Response;
+use App\Models\Rezervacia;
 use App\Models\Vystup;
 
 class VystupController extends AControllerBase
@@ -18,6 +19,8 @@ class VystupController extends AControllerBase
     public function delete() {
         $id = $this->request()->getValue('id');
         $vystupToDelete = Vystup::getOne($id);
+
+
         if ($vystupToDelete) {
             $vystupToDelete->delete();
         }

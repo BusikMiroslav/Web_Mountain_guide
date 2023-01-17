@@ -185,7 +185,7 @@ nav img {
 .delete_edit {
     position: absolute;
     background: black;
-    width: 200px;
+    width: 260px;
     height: 25px;
     border-radius: 8px;
     z-index: 100;
@@ -226,18 +226,7 @@ nav img {
     min-width: 350px;
     margin: 40px;
 }
-/*
-.product {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
-    -webkit-transition: 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-    -moz-transition: 0.4s ease-in-out, -moz-transform 0.4s ease-in-out;
-    transition: 0.4s ease-in-out, transform 0.4s ease-in-out;
-}
-*/
+
 .product-area .product .pozadie {
     display: inline-block;
     border-radius: 10px;
@@ -254,23 +243,10 @@ nav img {
     transition: 0.8s;
 }
 
-/*
-.product-img {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1));
-}
-
-
-.product-img-2 {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1));
-}
-
-.product-img-3 {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1));
-}
-*/
 .product-area a {
     text-decoration: none;
 }
+
 .product-area h3 {
     font-size: 4.2vw;
     padding-top: 160px;
@@ -340,7 +316,7 @@ nav img {
 .text {
     display: flex;
     justify-content: space-between;
-    margin: 5px;
+    margin: 5px 5px 5px 0;
 }
 
 .delete_poistenie h2{
@@ -507,42 +483,7 @@ nav img {
     margin-top: 9vw;
     overflow: hidden;
 }
-/*
-.login-box::before {
-    position: absolute;
-    content: '';
-    height: 420px;
-    width: 380px;
-    left: -50%;
-    top: -50%;
-    background: linear-gradient(0deg,transparent, darkorange, darkorange);
-    transform-origin:  bottom right;
-    animation: animate-login 6s linear infinite;
-}
 
-.login-box::after {
-    position: absolute;
-    content: '';
-    height: 420px;
-    width: 380px;
-    left: -50%;
-    top: -50%;
-    background: linear-gradient(0deg,transparent, darkorange, darkorange);
-    transform-origin:  bottom right;
-    animation: animate-login 6s linear infinite;
-    animation-delay: -3s;
-}
-
-@keyframes animate-login {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-*/
 .registration-body .login-box {
     position: relative;
     background: black;
@@ -822,12 +763,34 @@ input[type="submit"] {
     position: relative;
     background: black;
     width: 340px;
-    height: 190px;
+    height: 210px;
     border-radius: 8px;
     margin-left: 3%;
     margin-right: 20%;
     margin-top: 20px;
     overflow: hidden;
+}
+
+.delete_rezervacia {
+    position: absolute;
+    background: whitesmoke;
+    width: 80px;
+    height: 25px;
+    border-radius: 8px;
+    z-index: 100;
+    margin-left: 250px;
+}
+
+.delete_rezervacia a {
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+    color: black;
+    cursor: pointer;
+}
+
+.delete_rezervacia a:hover {
+    color: darkorange;
 }
 
 .text_rezervacie {
@@ -867,4 +830,55 @@ input[type="submit"] {
     .stlpce {
         grid-template-columns: repeat(2,1fr);
     }
+}
+
+
+/* Trasa */
+.trasa-body {
+    background-image: url("../images/trasa.jpg");
+    margin-top: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    border: solid;
+}
+
+.trasa-body h3 {
+    margin-bottom: 300px;
+}
+
+.trasa-box {
+    position: relative;
+    background: black;
+    width: 360px;
+    height: 340px;
+    border-radius: 8px;
+    margin-left: 3%;
+    margin-right: 20%;
+    margin-top: 2vw;
+    overflow: hidden;
+}
+
+.delete_trasa {
+    position: relative;
+    background: black;
+    width: 360px;
+    height: 80px;
+    border-radius: 8px;
+    margin-left: 3%;
+    margin-right: 20%;
+    margin-top: 2vw;
+    overflow: hidden;
+}
+
+.delete_trasa h2{
+    color: whitesmoke;
+    margin-left: 10px;
+    font-size: 22px;
+}
+.delete_trasa a {
+    color: red;
+    margin: 3px 10px;
+    text-decoration: none;
+    font-weight: bold;
 }

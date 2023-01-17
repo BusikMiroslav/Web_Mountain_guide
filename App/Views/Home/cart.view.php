@@ -38,26 +38,26 @@
                     <?php $rezervacia = \App\Models\Rezervacia::getAll() ?>
                     <h1>Moje výstupy</h1>
                     <?php foreach ($rezervacia as $rez) {
-                            if ($rez->getIdOsoby() == $user->getId()) { ?>
-                                <div class="user_rezervacia">
-                                    <div class="text_rezervacie">
-                                        <h2><strong>Vrchol: &ensp;&emsp;&nbsp;</strong><?php echo \App\Models\Vystup::getOne($rez->getIdVystupu())->getNazovVrcholu() ?></h2>
-                                        <h2><strong>Poistenie: &ensp;</strong><?php echo \App\Models\Poistenie::getOne($rez->getIdPoistenia())->getNazov()?></h2>
-                                        <?php if ($rez->getIdVodcu() != null) { ?>
-                                            <h2><strong>Vodca: &ensp;&ensp;&emsp;</strong><?php echo \App\Models\Vodca::getOne($rez->getIdVodcu())->getMeno()?> <?php echo \App\Models\Vodca::getOne($rez->getIdVodcu())->getPriezvisko()?></h2>
-                                            <h2><strong>Telefon: &ensp;&ensp;</strong> <?php echo \App\Models\Vodca::getOne($rez->getIdVodcu())->getTelefon()?></h2><br>
-                                        <?php } else { ?>
-                                            <h2><strong>Vodca: &ensp;&ensp;&emsp;</strong> ?</h2>
-                                            <h2><strong>Telefon: &ensp;&ensp;</strong> 0905428170</h2><br>
-                                        <?php } ?>
-                                    </div>
+                        if ($rez->getIdOsoby() == $user->getId()) { ?>
+                            <div class="user_rezervacia">
+                                <div class="text_rezervacie">
+                                    <h2><strong>Vrchol: &ensp;&emsp;&nbsp;</strong><?php echo \App\Models\Vystup::getOne($rez->getIdVystupu())->getNazovVrcholu() ?></h2>
+                                    <h2><strong>Poistenie: &ensp;</strong><?php echo \App\Models\Poistenie::getOne($rez->getIdPoistenia())->getNazov()?></h2>
+                                    <?php if ($rez->getIdVodcu() != null) { ?>
+                                        <h2><strong>Vodca: &ensp;&ensp;&emsp;</strong><?php echo \App\Models\Vodca::getOne($rez->getIdVodcu())->getMeno()?> <?php echo \App\Models\Vodca::getOne($rez->getIdVodcu())->getPriezvisko()?></h2>
+                                        <h2><strong>Telefon: &ensp;&ensp;</strong> <?php echo \App\Models\Vodca::getOne($rez->getIdVodcu())->getTelefon()?></h2><br>
+                                    <?php } else { ?>
+                                        <h2><strong>Vodca: &ensp;&ensp;&emsp;</strong> ?</h2>
+                                        <h2><strong>Telefon: &ensp;&ensp;</strong> 0905428170</h2><br>
+                                    <?php } ?>
                                 </div>
-                            <?php }
-                     } ?>
+                            </div>
+                        <?php }
+                    } ?>
                 </div>
             </div>
         </div>
 
     <?php } ?>
 
-<div>
+    <div>

@@ -15,8 +15,8 @@
                     <i></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="telefon" name="telefon" maxlength="13" pattern="^[+]?[()/0-9. -]{9,}$" required>
-                    <span>Telefon</span>
+                    <input type="text" id="telefon" name="telefon" onkeyup="numberUsedCheck(this.value)" maxlength="13" pattern="^[+]?[()/0-9. -]{9,}$" required>
+                    <span id="mobil">Telefon</span>
                     <i></i>
                 </div>
                 <div class="input-box">

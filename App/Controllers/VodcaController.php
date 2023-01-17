@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\AControllerBase;
 use App\Core\Responses\Response;
+use App\Models\Osoba;
 use App\Models\Vodca;
 
 class VodcaController extends AControllerBase
@@ -25,6 +26,12 @@ class VodcaController extends AControllerBase
 
     public function store() {
         $id = $this->request()->getValue('id');
+        if(Vodca::getOneByTelefon($this->request()->getValue('telefon')) != null) {
+            if(!$id || (Vodca::getOne($id)->getTelefon() != Vodca::getOneByTelefon($this->request()->getValue('telefon'))->getTelefon() && Vodca::getOneByTelefon($this->request()->getValue('telefon')) != null)) {
+                echo '<script>alert("Dané číslo už existuje!")</script>';
+                return $this->redirect("?c=vodca");
+            }
+        }
 
         $vodca = ($id ? Vodca::getOne($id) : new Vodca());
         $vodca->setMeno($this->request()->getValue('meno'));
@@ -51,5 +58,22 @@ class VodcaController extends AControllerBase
         $id = $this->request()->getValue('id');
         $vodcaToEdit = Vodca::getOne($id);
         return $this->html($vodcaToEdit, viewName: 'update');
+    }
+
+    /**
+     * Check if telefon is already used
+     * @return Response
+     * @throws \Exception
+     */
+    public function numberExists() : Response {
+        $telefon = $_REQUEST["telefon"];
+        $exists = Vodca::getOneByTelefon($telefon);
+        $output = false;
+
+        if($exists) {
+            $output = true;
+        }
+
+        return $this->json($output);
     }
 }

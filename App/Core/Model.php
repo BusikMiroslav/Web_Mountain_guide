@@ -129,6 +129,48 @@ abstract class Model implements \JsonSerializable
     }
 
     /**
+     * @param $telefon
+     * @return static|null
+     * @throws \Exception
+     */
+    static public function getOneByTelefon($telefon): ?static
+    {
+        if ($telefon == null) return null;
+
+        self::connect();
+        try {
+            $sql = "SELECT * FROM `" . static::getTableName() . "` WHERE `" . "telefon" . "`=?";
+            $stmt = self::$connection->prepare($sql);
+            $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, static::class);
+            $stmt->execute([$telefon]);
+            return $stmt->fetch() ?: null;
+        } catch (PDOException $e) {
+            throw new \Exception('Query failed: ' . $e->getMessage(), 0, $e);
+        }
+    }
+
+    /**
+     * @param $nazov
+     * @return static|null
+     * @throws \Exception
+     */
+    static public function getOneByNazov($nazov): ?static
+    {
+        if ($nazov == null) return null;
+
+        self::connect();
+        try {
+            $sql = "SELECT * FROM `" . static::getTableName() . "` WHERE `" . "nazov" . "`=?";
+            $stmt = self::$connection->prepare($sql);
+            $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, static::class);
+            $stmt->execute([$nazov]);
+            return $stmt->fetch() ?: null;
+        } catch (PDOException $e) {
+            throw new \Exception('Query failed: ' . $e->getMessage(), 0, $e);
+        }
+    }
+
+    /**
      * Save the current model to DB (if model id is set, update it, else create a new model)
      * @return void
      * @throws \Exception

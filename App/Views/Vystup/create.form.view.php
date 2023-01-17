@@ -1,10 +1,10 @@
 <div class="container-fluid">
+    <?php /** @var \App\Models\Vystup $data */ ?>
     <body class="form_background">
     <div class="form_vystup">
-        <form oninput="return changeText()" method="post" action="?c=vystup&a=store" enctype="multipart/form-data">
-            <?php /** @var \App\Models\Vystup $data */
-            if($data->getId()) { ?>
-                <input type="hidden" name="id" value="<?php echo $data->getId() ?>">
+        <form oninput="return changeText()" onmousemove="return changeNadpis()" method="post" action="?c=vystup&a=store" enctype="multipart/form-data">
+            <?php if($data->getId()) { ?>
+                <input type="hidden" name="id" id="id" value="<?php echo $data->getId() ?>">
             <?php }?>
             <div class="form_parts">
 

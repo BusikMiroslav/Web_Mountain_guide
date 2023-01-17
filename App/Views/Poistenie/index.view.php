@@ -1,15 +1,15 @@
 <div class="insurance-body">
     <div class="insurance-box">
-        <form class="form" method="post" action="?c=poistenie&a=store">
+        <form class="form" method="post">
             <label>
-                <h2>Pridanie poistenia</h2>
+                <h2 id="info">Pridanie poistenia</h2>
                 <div class="input-box">
-                    <input type="text" id="nazov" name="nazov" maxlength="20" required>
-                    <span>Názov</span>
+                    <input type="text" id="nazov" name="nazov" onkeyup="poistenieUsedCheck(this.value)" maxlength="20" required>
+                    <span id="ins">Názov</span>
                     <i></i>
                 </div>
             </label>
-            <input type="submit" value="Pridať">
+            <input onclick="ulozPoistenie()" type="submit" value="Pridať">
         </form>
     </div> <br><br>
         <ul>

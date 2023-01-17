@@ -23,13 +23,21 @@ class PoistenieController extends AControllerBase
         return $this->html();
     }
 
-    public function store() {
+    public function store() : Response {
+        $nazov = $_REQUEST["nazov"];
+        $id = $this->request()->getValue('id');
+        if(Poistenie::getOneByNazov($nazov) != null) {
+            if(!$id || (Poistenie::getOne($id)->getNazov() != Poistenie::getOneByNazov($nazov)->getNazov() && Poistenie::getOneByNazov($nazov) != null)) {
+                echo '<script>alert("Dané poistenie už existuje!")</script>';
+                return $this->redirect("?c=poistenie");
+            }
+        }
+
         $poistenie = new Poistenie();
-        $poistenie->setNazov($this->request()->getValue('nazov'));
-
+        $poistenie->setNazov($nazov);
         $poistenie->save();
-
-        return $this->redirect("?c=poistenie");
+        $output = true;
+        return $this->json($output);
     }
 
     public function delete() {
@@ -40,5 +48,22 @@ class PoistenieController extends AControllerBase
         }
 
         return $this->redirect("?c=poistenie");
+    }
+
+    /**
+     * Check if nazov poistenia is already used
+     * @return Response
+     * @throws \Exception
+     */
+    public function insuranceExists() : Response {
+        $nazov = $_REQUEST["poistenie"];
+        $exists = Poistenie::getOneByNazov($nazov);
+        $output = false;
+
+        if($exists) {
+            $output = true;
+        }
+
+        return $this->json($output);
     }
 }

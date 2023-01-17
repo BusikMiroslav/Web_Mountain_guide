@@ -5,12 +5,12 @@
             <label>
             <h2>Registrácia</h2>
             <div class="input-box">
-                <input type="text" id="meno" name="meno" maxlength="20" required>
+                <input type="text" id="meno" name="meno" maxlength="20" pattern="[^' ']+" required>
                 <span>Meno</span>
                 <i></i>
             </div>
             <div class="input-box">
-                <input type="text" id="priezvisko" name="priezvisko" maxlength="20" required>
+                <input type="text" id="priezvisko" name="priezvisko" maxlength="20" pattern="[^' ']+" required>
                 <span>Priezvisko</span>
                 <i></i>
             </div>
@@ -20,12 +20,12 @@
                 <i></i>
             </div>
             <div class="input-box">
-                <input type="email" id="email" name="email" maxlength="30" required>
+                <input type="email" id="email" name="email" maxlength="30" pattern="[^' ']+" required>
                 <span>Email</span>
                 <i></i>
             </div>
             <div class="input-box">
-                <input type="password" id="heslo" name="heslo" maxlength="20" required="required">
+                <input type="password" id="heslo" name="heslo" maxlength="20" pattern="[^' ']+" required="required">
                 <span>Heslo</span>
                 <i></i>
             </div>

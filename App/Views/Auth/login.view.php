@@ -7,12 +7,12 @@ $layout = 'auth';
         <label>
         <h2>PRIHLÁSENIE</h2>
         <div class="input-box">
-            <input type="text" name="email" id="email" required="required">
+            <input type="text" name="email" id="email" pattern="[^' ']+" required="required">
             <span>Email</span>
             <i></i>
         </div>
         <div class="input-box">
-            <input type="password" name="password" id="password" required="required">
+            <input type="password" name="password" id="password" maxlength="20" pattern="[^' ']+" required="required">
             <span>Heslo</span>
             <i></i>
         </div>

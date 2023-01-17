@@ -5,12 +5,12 @@
             <label>
                 <h2>Zabudnuté heslo</h2>
                 <div class="input-box">
-                    <input id="email" type="email" name="email" required="required">
+                    <input id="email" type="email" name="email" maxlength="30" pattern="[^' ']+" required="required">
                     <span>Email</span>
                     <i></i>
                 </div>
                 <div class="input-box">
-                    <input id="heslo" type="password" name="heslo" required="required">
+                    <input id="heslo" type="password" name="heslo" maxlength="20" pattern="[^' ']+" required="required">
                     <span>Nové heslo</span>
                     <i></i>
                 </div>

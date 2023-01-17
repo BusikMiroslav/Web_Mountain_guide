@@ -11,7 +11,7 @@
                 <label>
                     <b id="txtnadpis">Nový výstup</b><br><br>
                     <p id="txtnazov">Zadaj názov vrcholu</p>
-                    <input id="nazov" type="text" name="nazov_vrcholu" value="<?php echo $data->getNazovVrcholu() ?>" maxlength="20" required><br><br>
+                    <input id="nazov" type="text" name="nazov_vrcholu" value="<?php echo $data->getNazovVrcholu() ?>" maxlength="20" pattern="[^' ']+" required><br><br>
                     <p id="txtcena">Zadaj cenu</p>
                     <input id="cena" type="number" name="cena" value="<?php echo $data->getCena() ?>" min="0" max="2000" required><br><br>
                     <p id="txtpopis">Zadaj popis</p>

@@ -4,7 +4,7 @@
             <label>
                 <h2 id="info">Pridanie poistenia</h2>
                 <div class="input-box">
-                    <input type="text" id="nazov" name="nazov" onkeyup="poistenieUsedCheck(this.value)" maxlength="20" required>
+                    <input type="text" id="nazov" name="nazov" onkeyup="poistenieUsedCheck(this.value)" maxlength="20" pattern="[^' ']+" required>
                     <span id="ins">Názov</span>
                     <i></i>
                 </div>

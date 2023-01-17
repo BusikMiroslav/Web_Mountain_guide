@@ -5,12 +5,12 @@
             <label>
                 <h2>Horský vodca</h2>
                 <div class="input-box">
-                    <input type="text" id="meno" name="meno" maxlength="20" required>
+                    <input type="text" id="meno" name="meno" maxlength="20" pattern="[^' ']+" required>
                     <span>Meno</span>
                     <i></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="priezvisko" name="priezvisko" maxlength="20" required>
+                    <input type="text" id="priezvisko" name="priezvisko" maxlength="20" pattern="[^' ']+" required>
                     <span>Priezvisko</span>
                     <i></i>
                 </div>

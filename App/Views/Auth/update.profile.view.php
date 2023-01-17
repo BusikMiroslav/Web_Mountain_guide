@@ -13,12 +13,12 @@
             <label>
                 <h2>Zmena údajov</h2>
                 <div class="input-box">
-                    <input type="text" id="meno" name="meno" value="<?php echo $data->getMeno() ?>" maxlength="20" required>
+                    <input type="text" id="meno" name="meno" value="<?php echo $data->getMeno() ?>" maxlength="20" pattern="[^' ']+" required>
                     <span>Meno</span>
                     <i></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="priezvisko" name="priezvisko" value="<?php echo $data->getPriezvisko() ?>" maxlength="20" required>
+                    <input type="text" id="priezvisko" name="priezvisko" value="<?php echo $data->getPriezvisko() ?>" maxlength="20" pattern="[^' ']+" required>
                     <span>Priezvisko</span>
                     <i></i>
                 </div>
@@ -28,12 +28,12 @@
                     <i></i>
                 </div>
                 <div class="input-box">
-                    <input type="email" id="email" name="email" value="<?php echo $data->getEmail() ?>" maxlength="30" required>
+                    <input type="email" id="email" name="email" value="<?php echo $data->getEmail() ?>" maxlength="30" pattern="[^' ']+" required>
                     <span>Email</span>
                     <i></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" id="heslo" name="heslo" value="<?php echo $data->getHeslo() ?>" maxlength="20" required="required">
+                    <input type="password" id="heslo" name="heslo" value="<?php echo $data->getHeslo() ?>" maxlength="20" pattern="[^' ']+" required="required">
                     <span>Heslo</span>
                     <i></i>
                 </div>
